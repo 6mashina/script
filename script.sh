@@ -1,9 +1,9 @@
 #!/bin/bash
 
-LOCAL_PATH="home/onworks/test.txt"  
-REMOTE_USER="root"      
-REMOTE_HOST="194.87.94.63"   
-REMOTE_PATH="root"
+LOCAL_PATH=""  
+REMOTE_USER=""      
+REMOTE_HOST=""   
+REMOTE_PATH=""
 INSTALL_DIR="/script"
 
 mkdir -p $INSTALL_DIR
