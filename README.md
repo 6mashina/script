@@ -46,14 +46,14 @@ else
 fi
 ```
 
-## Установка прав на выполнения скриптов 
+## Установка прав для выполнения скриптов 
 ```Bash
 chmod +x $INSTALL_DIR/send_file.sh
 chmod +x $INSTALL_DIR/check_last_day.sh
 ```
 ## Создаем службу, которая будет запускать [скрипт](#cкрипт-проверяющий-последний-день-месяца)
 
-
+```Bash
 cat <<EOL > /etc/systemd/system/send_file.service
 [Unit]
 Description=send imprt file at last month
@@ -64,7 +64,9 @@ ExecStart=/bin/bash $INSTALL_DIR/check_last_day.sh
 [Install]
 WantedBy=multi-user.target
 EOL
-
-
-
-if bash not work use -> sed -i 's/\r$//' filename
+```
+## FAQ
+В случае отсутсвия утилиты **unix2dos** используйте команду: 
+```Bash
+sed -i 's/\r$//' script_name.sh 
+```
